@@ -1,6 +1,7 @@
 import bs4 as bs
 import urllib.request
 import re
+import heapq 
 import nltk
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -34,9 +35,11 @@ for word in nltk.word_tokenize(new_text):
         else:
             count_each_word[word] += 1
         
+
 #หา weignt  
 for key in count_each_word.keys():
     count_each_word[key] = count_each_word[key]/max(count_each_word.values())
+
 
 join_score = {}
 for sentence in sentences:
@@ -47,4 +50,11 @@ for sentence in sentences:
                 join_score[sentence] = count_each_word[word]
             else:
                 join_score[sentence] += count_each_word[word]
-    
+                
+                
+#ดึงจำนวน sentence count ที่มากที่สุด 3 จำนวน
+most_important_sentences = heapq.nlargest(3,join_score,key=join_score.get)
+
+print('==============>THE MOST IMPORTANT SENTENCES<===============')
+for i,isentence in enumerate(most_important_sentences):
+        print(i+1,')', isentence+'\n')

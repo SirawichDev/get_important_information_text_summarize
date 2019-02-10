@@ -1,5 +1,5 @@
 <h1>สรุปบทความ (text-summarization)</h1>
-![alt text](https://raw.githubusercontent.com/SirawichDev/get_important_information_text_summarize/master/images/variables.png)
+![alt text](https://raw.githubusercontent.com/SirawichDev/get_important_information_text_summarize/images/variables.png)
 
 ## ขั้นตอนการทำ text-summarization
 - เตรียมข้อมูล
